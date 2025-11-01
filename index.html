@@ -1,0 +1,16 @@
+<input id="query" placeholder="Ask something">
+<button onclick="ask()">Ask</button>
+<pre id="response"></pre>
+
+<script>
+async function ask() {
+    const query = document.getElementById("query").value;
+    const res = await fetch("/query", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({query: query, k: 3})
+    });
+    const data = await res.json();
+    document.getElementById("response").innerText = data.results;
+}
+</script>
