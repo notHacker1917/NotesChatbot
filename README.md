@@ -10,7 +10,7 @@ A production-ready, Python-only **Retrieval-Augmented Generation (RAG)** chatbot
 - Token-aware overlapping **chunking** with metadata preservation.
 - Local-first **FAISS** vector store using normalised `bge-large-en-v1.5` embeddings.
 - **Claude API** answer generation with retrieval-grounded prompt templates.
-- REST API (Flask blueprints) — upload, query, search, browse.
+- REST API (Flask blueprints) — upload, query, search, browse. 
 - **Streamlit** chat UI with file upload, semantic search, hierarchy browser, chat history, typing indicator, and an MPC toggle.
 - Lightweight **MPC simulation** (`mpc_module/`) demonstrating additive-shared inner-product retrieval across multiple parties.
 - Solid engineering hygiene: pydantic-settings config, structured logging, type hints, docstrings, modular blueprints, validation, retries, tests.
