@@ -15,7 +15,7 @@ A production-ready, Python-only **Retrieval-Augmented Generation (RAG)** chatbot
 - Lightweight **MPC simulation** (`mpc_module/`) demonstrating additive-shared inner-product retrieval across multiple parties.
 - Solid engineering hygiene: pydantic-settings config, structured logging, type hints, docstrings, modular blueprints, validation, retries, tests.
 
----
+--- 
 
 ## 🏗 Architecture
 
