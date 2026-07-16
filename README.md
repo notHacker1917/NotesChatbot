@@ -1,10 +1,10 @@
-# 📚 NotesRAG-Chatbot
+# NotesRAG-Chatbot
 
 A production-ready, Python-only **Retrieval-Augmented Generation (RAG)** chatbot for structured academic notes — powered by **Anthropic Claude**, **FAISS**, and **SentenceTransformers**, with a Flask backend and a Streamlit frontend, plus a basic **Multi-Party Computation (MPC)** module for privacy-preserving query simulation.
  
 ---
   
-## ✨ Features  
+##  Features  
  
 - Ingest **PDF / DOCX / URL / OneNote-JSON** notes into a hierarchical database (*Subject → Unit → Topic → Subtopic → Note*).
 - Token-aware overlapping **chunking** with metadata preservation. 
@@ -17,7 +17,7 @@ A production-ready, Python-only **Retrieval-Augmented Generation (RAG)** chatbot
 
 --- 
 
-## 🏗 Architecture 
+##  Architecture 
 
 ```
                      ┌─────────────────────────────────────────┐
@@ -54,7 +54,7 @@ A production-ready, Python-only **Retrieval-Augmented Generation (RAG)** chatbot
 
 ---
 
-## 📂 Folder Structure
+## Folder Structure
 
 ```
 notes-rag-chatbot/
@@ -117,7 +117,7 @@ notes-rag-chatbot/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone & install
 
@@ -163,7 +163,7 @@ The Streamlit app expects the Flask API to be reachable at `API_BASE_URL` (defau
 
 ---
 
-## 🔑 Claude API Setup
+##  Claude API Setup
 
 1. Create an account at [console.anthropic.com](https://console.anthropic.com/).
 2. Generate an API key.
@@ -199,13 +199,13 @@ Indexes cover every foreign key, `notes.embedding_id`, `notes.content_hash`, `so
 
 ---
 
-## 🧠 FAISS Explanation
+## FAISS Explanation
 
 We use **`faiss.IndexFlatIP`** because all embeddings are L2-normalised — inner product on normalised vectors equals cosine similarity. The index and a parallel pickle of `_Record` metadata are persisted under `storage/faiss_index/`. When the corpus grows beyond a few hundred thousand chunks you can swap in `IndexHNSWFlat` or `IndexIVFPQ` by changing one method in `rag_pipeline/vector_store.py`.
 
 ---
 
-## 🔐 MPC Overview
+##  MPC Overview
 
 The `mpc_module/` package demonstrates how RAG could work when no single party holds the entire corpus or query:
 
@@ -220,7 +220,7 @@ Toggle MPC retrieval from the Streamlit sidebar or by passing `"use_mpc": true` 
 
 ---
 
-## 📡 API Documentation
+## API Documentation
 
 ### `GET /health`
 Returns API status and active model names.
@@ -361,7 +361,7 @@ curl -F "file=@midterm.pdf"      -F "subject=OS" -F "unit=Core" -F "topic=Paging
 
 ---
 
-## 🧪 Tests
+##  Tests
 
 ```bash
 pytest -q
@@ -378,7 +378,7 @@ The Anthropic SDK and the embedding model are **not** required to run the test s
 
 ---
 
-## 🖼 Screenshots
+##  Screenshots
 
 > Place your captured PNGs in `docs/screenshots/` and they'll render here.
 
@@ -389,7 +389,7 @@ The Anthropic SDK and the embedding model are **not** required to run the test s
 
 ---
 
-## 🛠 Example Workflow
+## Example Workflow
 
 ```bash
 # 1. Boot backend
@@ -412,7 +412,7 @@ curl -X POST http://localhost:5000/query \
 
 ---
 
-## 🔭 Future Improvements
+##  Future Improvements
 
 - **Streaming responses** via Anthropic's `messages.stream`.
 - Swap FAISS Flat → HNSW once corpus > 100k chunks.
@@ -425,6 +425,3 @@ curl -X POST http://localhost:5000/query \
 
 ---
 
-## 📜 License
-
-MIT — see `LICENSE` (not included).
