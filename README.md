@@ -74,7 +74,7 @@ notes-rag-chatbot/
 │   └── static/style.css
 ├── database/
 │   ├── models.py              # SQLAlchemy ORM models
-│   ├── repository.py          # Thin CRUD helpers
+│   ├── repository.py          # Thin CRUD helpers 
 │   ├── session.py             # Engine, sessions, init_db()
 │   └── migrations/            # Alembic-ready directory
 ├── rag_pipeline/
