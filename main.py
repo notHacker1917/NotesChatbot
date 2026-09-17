@@ -5,7 +5,7 @@ from rag_engine import query_notes
 
 app = FastAPI(title="Notes Chatbot")
 
-# Allow frontend (any origin for now)
+# Allow frontend (any origin for now) 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
