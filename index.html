@@ -8,7 +8,7 @@ async function ask() {
     const res = await fetch("/query", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({query: query, k: 3})
+        body: JSON.stringify({query: query, k: 3}) 
     });
     const data = await res.json();
     document.getElementById("response").innerText = data.results;
