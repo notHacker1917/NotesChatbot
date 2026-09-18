@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from rag_engine import query_notes
 
 app = FastAPI()
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="templates") 
 
 class QueryRequest(BaseModel):
     query: str
