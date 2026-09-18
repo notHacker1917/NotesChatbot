@@ -7,7 +7,7 @@ app = FastAPI(title="Notes Chatbot")
 
 # Allow frontend (any origin for now) 
 app.add_middleware(
-    CORSMiddleware,
+    CORSMiddleware, 
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
